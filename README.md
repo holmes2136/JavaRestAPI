@@ -118,7 +118,7 @@ http://jmchung.github.io/blog/2013/12/14/integrating-swagger-into-jax-rs-with-ja
 3. Task (multi thread)
 >>  The closest  class is Future<T> or CompletableFuture<T>. CompletableFuture has some extra chaining methods similar to those in Task<T> in C#.
 
-Apparently in early versions of the Task Parallel Library (C#) Task<T> was called Future<T> (http://www.nedstoyanov.com/promises-and-futures/)
+
 
 
 
