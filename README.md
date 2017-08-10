@@ -91,3 +91,14 @@ public Response addMessage(Message message){
 	}
 ```
 
+6. Get cookied params or header params from request
+```
+
+@GET
+public Response addMessage(@HeaderParams("authSessionID") String header,
+		           @CookiedParams("name") String cookie){	
+}	
+	
+```
+
+
