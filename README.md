@@ -17,14 +17,16 @@ the two library (Jersey and RESTEasy) implement it
 and create a basic template for us to easily to write REST style api
 ```
 
+# Features : 
+
 1.Http verb attribute support
 ```
-  //http://localhost:8080/api/messages
+//http://localhost:8080/api/messages
   
-  @GET
-	public List<Message> getMessages() {
-		return messageService.getAllMessages();
-	}
+@GET
+public List<Message> getMessages() {
+   return messageService.getAllMessages();
+}
 ```
 
 2.Route determine
@@ -34,36 +36,36 @@ and create a basic template for us to easily to write REST style api
 @Path("/messages")
 public class MessageResource {
 
-    @GET
-    @Path("test")
-    public String getMessages(@QueryParam("year")int year) {
-      return "test" + year;
-    }
-    
+	@GET
+	@Path("test")
+	public String getMessages(@QueryParam("year")int year) {
+	   return "test" + year;
+	}
+
 }
 
 ```
 
 3. Can returning XML , JSON , plain text etc..
 ```
->>
-  @GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Message> getMessages() {
-		return messageService.getAllMessages();
-	}
+
+@GET
+@Produces(MediaType.APPLICATION_JSON)
+public List<Message> getMessages() {
+   return messageService.getAllMessages();
+}
 ```
 
 4. Accessing Path params
 ```
-  //http://localhost:8080/messenger/api/messages/1
+//http://localhost:8080/messenger/api/messages/1
   
-	@GET
-	@Path("/{messageId}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String test(@PathParam("messageId") String messageId) {
-		return "test" +  messageId; 
-	}
+@GET
+@Path("/{messageId}")
+@Produces(MediaType.APPLICATION_JSON)
+public String test(@PathParam("messageId") String messageId) {
+    return "test" +  messageId; 
+}
 ```
 
 
@@ -71,21 +73,21 @@ public class MessageResource {
 ```
   //http://localhost:8080/api/messages
 
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response addMessage(Message message , @Context UriInfo uriInfo){		
-		Message newMessage = messageService.addMessage(message);
-	
-		//Create url in header
-		return Response.created(uri)
-							.entity(newMessage)
-							.build();
-              
-		//Can return properly status code
-		//return Response.status(Status.CREATED)
-		//			.entity(newMessage)
-		//			.build();
+@POST
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+public Response addMessage(Message message){		
+	Message newMessage = messageService.addMessage(message);
+
+	//Create url in header
+	//return Response.created(uri)
+	//	  .entity(newMessage)
+	//	  .build();
+
+	//Can return properly status code
+	return Response.status(Status.CREATED)
+		  .entity(newMessage)
+		  .build();
 	}
 ```
 
