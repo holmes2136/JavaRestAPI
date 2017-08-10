@@ -29,6 +29,7 @@ public class MessageResource {
 	
 	MessageService messageService = new MessageService();
 	
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Message> getMessages() {
@@ -49,6 +50,7 @@ public class MessageResource {
 		return param;
 	}
 	
+	//http://localhost:8080/messenger/api/messages/1
 	@GET
 	@Path("/{messageId}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -56,6 +58,7 @@ public class MessageResource {
 		return "test" +  messageId; 
 	}
 	
+	//http://localhost:8080/messenger/api/messages
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -69,16 +72,18 @@ public class MessageResource {
 		String newId = String.valueOf(newMessage.getId());
 		URI uri = uriInfo.getAbsolutePathBuilder().path(newId).build();
 		
+		//Create url in header
 		return Response.created(uri)
 							.entity(newMessage)
 							.build();
 		
-//		return Response.status(Status.CREATED)
-//					.entity(newMessage)
-//					.build();
+		//Can return properly status code
+		//return Response.status(Status.CREATED)
+		//			.entity(newMessage)
+		//			.build();
 	}
 	
-	//http://localhost:8080/messenger/api/1
+	//http://localhost:8080/messenger/api/messages/1
 	@PUT
 	@Path("/{messageId}")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -88,6 +93,7 @@ public class MessageResource {
 		return messageService.updateMessage(message);
 	}
 	
+	//http://localhost:8080/messenger/api/messages/1
 	@DELETE
 	@Path("/{messageId}")
 	@Produces(MediaType.APPLICATION_JSON)
