@@ -103,7 +103,7 @@ public Response addMessage(@HeaderParams("authSessionID") String header,
 
 
 # Other topics : 
-1. async http request
+1. Async http request
 >> Java provide like ClientBuilder api  to do this
 https://stackoverflow.com/questions/3142915/how-do-you-create-an-asynchronous-http-request-in-java
 
