@@ -102,3 +102,19 @@ public Response addMessage(@HeaderParams("authSessionID") String header,
 ```
 
 
+# Other topics : 
+1. async http request
+>> Java provide like ClientBuilder api  to do this
+https://stackoverflow.com/questions/3142915/how-do-you-create-an-asynchronous-http-request-in-java
+
+2. Integration with swagger
+>> Can support
+http://jmchung.github.io/blog/2013/12/14/integrating-swagger-into-jax-rs-with-java-ee-6-specification/
+
+3. Task (multi thread)
+>>  The closest  class is Future<T> or CompletableFuture<T>. CompletableFuture has some extra chaining methods similar to those in Task<T> in C#.
+
+Apparently in early versions of the Task Parallel Library (C#) Task<T> was called Future<T> (http://www.nedstoyanov.com/promises-and-futures/)
+
+
+
