@@ -1,4 +1,4 @@
-# Neat sample for spring IOC
+# Setter injection by Spring
 
 ### Step1: 
 ```
