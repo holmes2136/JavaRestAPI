@@ -40,13 +40,14 @@
 ```
 
 ### Note : Replace ClassPathResource with FileSystemXmlApplicationContext
-```
+
 I put the spconfig in the same path : src >> spconfig.xml
 but it will cause io exception when i replace ClassPathResource with FileSystemXmlApplicationContext , 
 and the following code will resolve this 
 
-ApplicationContext context = new FileSystemXmlApplicationContext("classpath:spconfig.xml");
 
+```
+ApplicationContext context = new FileSystemXmlApplicationContext("classpath:spconfig.xml");
 ```
 
 
