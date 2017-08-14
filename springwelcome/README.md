@@ -26,7 +26,7 @@
 		</dependency>
 ```
 
-### Step4: the meta data info shoul be DOCTYPE bean ... instead of <?xml ...?>...
+### Step4: the meta data info shoul be DOCTYPE bean ... instead of "<xml ...?>..."
 ```
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
 					"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
