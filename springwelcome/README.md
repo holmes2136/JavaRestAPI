@@ -1,20 +1,20 @@
 # Neat sample for spring IOC
 
-# Step1: 
+###Step1: 
 ```
   Create java project
 ```
 
 
 
-# Step2: 
+###Step2: 
 ```
   Convert java project into Marven project
 ```
 
 
 
-# Step3: 
+###Step3: 
 ```
  Add following dependency in pom.xml
  
@@ -26,7 +26,7 @@
 		</dependency>
 ```
 
-# Step4: the meta data info shoul be DOCTYPE bean ... instead of <?xml ...?>...
+###Step4: the meta data info shoul be DOCTYPE bean ... instead of <?xml ...?>...
 ```
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
 					"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
