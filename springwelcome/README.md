@@ -7,9 +7,10 @@
 
 
 
-### Step2: 
+### Step2: Convert java project into Marven project
 ```
-  Convert java project into Marven project
+  project >> Configure >> Convert to Marven project
+  
 ```
 
 
